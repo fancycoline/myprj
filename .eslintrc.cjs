@@ -1,3 +1,5 @@
+import { error } from 'console'
+
 /* eslint-env node */
 require('@rushstack/eslint-patch/modern-module-resolution')
 
@@ -7,7 +9,7 @@ module.exports = {
     'plugin:vue/vue3-essential',
     'eslint:recommended',
     '@vue/eslint-config-typescript',
-    '@vue/eslint-config-prettier',
+    '@vue/eslint-config-prettier'
   ],
   // 小程序全局变量
   globals: {
@@ -25,21 +27,22 @@ module.exports = {
   },
   parserOptions: {
     ecmaVersion: 'latest',
+    parser: '@typescript-eslint/parser'
   },
   rules: {
-    'prettier/prettier': [
-      'warn',
-      {
-        singleQuote: true,
-        semi: false,
-        printWidth: 100,
-        trailingComma: 'all',
-        endOfLine: 'auto',
-      },
-    ],
+    // 'prettier/prettier': [
+    //   'warn',
+    //   {
+    //     singleQuote: true,
+    //     semi: 'none',
+    //     printWidth: 100,
+    //     trailingComma: 'none',
+    //     endOfLine: 'auto',
+    //   }
+    // ],
     'vue/multi-word-component-names': ['off'],
     'vue/no-setup-props-destructure': ['off'],
     'vue/no-deprecated-html-element-is': ['off'],
-    '@typescript-eslint/no-unused-vars': ['off'],
-  },
+    '@typescript-eslint/no-unused-vars': ['off']
+  }
 }
